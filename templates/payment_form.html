@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form id="payment-form" method='get' action='https://enot.io/pay'>
+        <input type='hidden' name='m' value='{{ MERCHANT_ID }}'>
+        <input type='hidden' name='oa' value='{{ ORDER_AMOUNT }}'>
+        <input type='hidden' name='o' value='{{ PAYMENT_ID }}'>
+        <input type='hidden' name='s' value='{{ sign }}'>
+        <input type='hidden' name='success_url' value='{{ bot_url }}'>
+        <input type='hidden' name='fail_url' value='{{ bot_url }}'>
+        <input type="hidden" name="c" value="Тестовая оплата">
+        <input type='hidden' name='cf[user_id]' value='{{ user_id }}'>
+    </form>
+    <script>
+        document.getElementById("payment-form").submit();
+    </script>
+</body>
+</html>
